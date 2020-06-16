@@ -1,0 +1,38 @@
+
+
+.div_carrousel_menu{
+    background-color: #FBAB83;
+    width: 200px;
+    margin-top: 0;
+    margin-left: 8%;
+    position: absolute;
+    top: 328px;
+    z-index: 3;
+}
+
+.div_carrousel_menu > nav{
+}
+
+.div_carrousel_menu > nav > ul{
+    margin-top: 0;
+    padding: 5%;
+}
+
+
+.div_carrousel_menu > nav > ul > li{
+    list-style-type: none;
+    color: #8F5B36;
+    font-weight: 700; 
+    padding: 5%;
+    border-bottom: 1px solid #E79F7C;
+}
+
+
+
+
+@media (max-width: 991px) 
+{
+    .div_carrousel_menu{
+        display: none;
+    }
+}

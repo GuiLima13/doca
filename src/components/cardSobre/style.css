@@ -1,0 +1,39 @@
+.div_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #95D1AF;
+}
+.card{
+    
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    background-color: #95D1AF;
+    border: none;
+}
+h1{
+    color: white;
+    font-size: 1.5em;
+}
+p{
+    color: #8F5B36;
+    font-size: 1.0em;
+    text-align: center;
+}
+
+@media (min-width:992px){
+    .div_container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #95D1AF;
+    }
+    .card{
+        width: 33%;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        background-color: #95D1AF;
+    }
+}
