@@ -7,12 +7,12 @@ const VitrineProdutos = ()=>{
         <div className="prd_container">
             
             <div>
-                <img className="img" src="/images/brigadeiro.jpg"></img>
+                <img className="img" alt='' src="/images/brigadeiro.jpg"></img>
                 <div className="conteudo">
                     <p >Brigadeiro</p>
                     <span>veja os sabores</span>
                 </div>
-                <img className="img" src="/images/brigadeiro.jpg"></img>
+                <img className="img" alt='' src="/images/brigadeiro.jpg"></img>
                 <div className="conteudo">
                     <p>Cupcakes</p>
                     <span>veja os sabores</span>
@@ -23,14 +23,14 @@ const VitrineProdutos = ()=>{
                     <span>veja os sabores</span>
 
                 </div>
-                <img className="img" src="/images/brigadeiro.jpg"></img>
+                <img className="img"  alt='' src="/images/brigadeiro.jpg"></img>
                 <div className="conteudo2">
                     
                     <p>Salgados</p>
                     <span>veja os sabores</span>
 
                 </div>
-                <img className="img" src="/images/brigadeiro.jpg"></img>
+                <img className="img" alt='' src="/images/brigadeiro.jpg"></img>
             </div>
         </div>
     )

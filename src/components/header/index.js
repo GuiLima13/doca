@@ -4,7 +4,7 @@ import './style.css'
 const Header = ()=>{
     return(
             <header>
-                <img className="img_logo" src="/images/logo.png"></img>
+                <img className="img_logo" alt=''  src="/images/logo.png"></img>
                 <div className="header_nav_topMenu">
 
                     <div  className="div_desktop">
@@ -25,25 +25,25 @@ const Header = ()=>{
                         <div className="collapse navbar-collapse" id="conteudoNavbarSuportado">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item active">
-                                    <a className="nav-link" >Bolos</a>
+                                    <a href='/' className="nav-link" >Bolos</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" >Bolos de Pote</a>
+                                    <a  href='/' className="nav-link" >Bolos de Pote</a>
                                 </li>
                                 <li className="nav-item active">
-                                    <a className="nav-link" >Cupcake</a>
+                                    <a  href='/' className="nav-link" >Cupcake</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" >Doces</a>
+                                    <a  href='/' className="nav-link" >Doces</a>
                                 </li>
                                 <li className="nav-item active">
-                                    <a className="nav-link" >Salgados</a>
+                                    <a  href='/' className="nav-link" >Salgados</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" >Tortas</a>
+                                    <a href='/'  className="nav-link" >Tortas</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" >Sua Festa</a>
+                                    <a  href='/' className="nav-link" >Sua Festa</a>
                                 </li>
                             </ul>
                         </div>
