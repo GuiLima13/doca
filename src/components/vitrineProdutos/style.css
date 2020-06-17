@@ -49,3 +49,17 @@
 }
 
 
+
+
+@media (max-width: 992px) 
+{
+    .conteudo2{
+        width: 50%;
+    }
+    .conteudo{
+        width: 50%;
+    }
+    .img{
+        width: 50%;
+    }
+}
