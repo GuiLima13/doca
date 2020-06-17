@@ -1,4 +1,7 @@
 import React from "react"
+
+import {Link} from "react-router-dom"
+
 import './style.css'
 
 const Header = ()=>{
@@ -6,7 +9,7 @@ const Header = ()=>{
         <div className="div_carrousel_menu">
             <nav>
                 <ul>
-                    <li>Bolos</li>
+                    <li><Link to="/produtos">Bolos</Link></li>
                     <li>Bolos de Pote</li>
                     <li>Cupcake</li>
                     <li>Doces</li>
