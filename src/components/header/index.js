@@ -10,7 +10,7 @@ import './style.css'
 const Header = ({categorias,dispatch})=>{
     return(
             <header>
-                <img alt="..." className="img_logo" src="/images/logo.png"></img>
+            <Link to="/"><img alt="..." className="img_logo" src="/images/logo.png"></img></Link>
                 <div className="header_nav_topMenu">
 
                     <div  className="div_desktop">

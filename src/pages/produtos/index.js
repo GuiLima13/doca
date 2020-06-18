@@ -5,7 +5,7 @@ import store from '../../store'
 
 import Header from "../../components/header"
 import MenuLateral from "../../components/menuLateral"
-import GridProdutos from "../../components/gridProdutos"
+import CardProdutos from "../../components/cardProdutos"
 import MainProdutos from "../../components/mainProdutos"
 
 const Produtos = () => {
@@ -19,10 +19,11 @@ const Produtos = () => {
                     <MenuLateral />
                 <MainProdutos>
 
-                </MainProdutos>
-                
-                <GridProdutos />
+                <CardProdutos  />
+                <CardProdutos />
+                <CardProdutos />
 
+                </MainProdutos>
             </Provider>
         </div>
 

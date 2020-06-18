@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-    active: {},
+    active: '',
     categorias: [
         {
             id: 1,

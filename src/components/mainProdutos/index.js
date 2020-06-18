@@ -1,11 +1,13 @@
 import React from 'react';
 import './style.css';
 
-const CardSobre = ()=>{
+const CardSobre = (props)=>{
     return(
-        <main>
-            
+        
+        <main className="main_produtos">
+            {props.children}
         </main>
+        
     )
 }
 

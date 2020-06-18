@@ -1,30 +1,51 @@
-main{
-    background: black;
-    position: absolute;
-    
-    width: 200px;
-    height: 300px;
-    top: 305px;
-    
-    margin-left: 24%;
+.main_produtos{
+    width: 90%;
+    margin: 2% 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-
-
-
-@media (min-width: 140px) 
+@media  (min-width: 500px) 
 {
-    main{
+    .main_produtos{
+        justify-content: space-between;
+    }
+}
+
+@media  (min-width: 991px) 
+{
+    .main_produtos{
+        
+        top: 278px;
+        position: absolute;
         margin-left: 30%;
+        width: 68%;
     }
 }
 
-
-@media (max-width: 991px) 
+@media  (min-width: 1150px) 
 {
-    main{
-        margin-left: 5%;
-        position: unset;
-        margin-top: 2%;
+    .main_produtos{
+        
+        top: 278px;
+        position: absolute;
+        margin-left: 28%;
+        width: 70%;
     }
 }
+
+@media  (min-width: 1300px) 
+{
+    .main_produtos{
+        
+        top: 278px;
+        position: absolute;
+        margin-left: 24%;
+        width: 74%;
+    }
+}
+
+/*
+
+*/
