@@ -1,6 +1,9 @@
 
 import React from 'react';
 
+import { Provider } from 'react-redux'
+
+import store from '../../store'
 
 import Header from '../../components/header'
 import MenuLateral from '../../components/menuLateral'
@@ -10,16 +13,18 @@ import CardSobre from '../../components/cardSobre'
 import VitrineProdutos from '../../components/vitrineProdutos'
 
 
-const Home = ()=>{
-    return (
+const Home = () => {
+  return (
     <div className="App">
-        <Header/>
+      <Provider store={store}>
+        <Header />
         <ContainerMenu>
-        <MenuLateral/>
-        <Carrossel/>
+          <MenuLateral />
+          <Carrossel />
         </ContainerMenu>
-        <CardSobre/>
-        <VitrineProdutos/>
+        <CardSobre />
+        <VitrineProdutos />
+      </Provider>
     </div>
   );
 }

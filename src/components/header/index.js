@@ -1,14 +1,20 @@
 import React from "react"
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+
+import * as CategoriasActions from "../../store/actions/categorias"
+
 import './style.css'
 
-const Header = ()=>{
+
+const Header = ({categorias,dispatch})=>{
     return(
             <header>
                 <img alt="..." className="img_logo" src="/images/logo.png"></img>
                 <div className="header_nav_topMenu">
 
                     <div  className="div_desktop">
-                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        <i className="fa fa-bars" aria-hidden="true"></i>
                         
                         <span>Ver Categorias</span>
                     </div>
@@ -24,27 +30,13 @@ const Header = ()=>{
 
                         <div className="collapse navbar-collapse" id="conteudoNavbarSuportado">
                             <ul className="navbar-nav mr-auto">
-                                <li className="nav-item active">
-                                    <a href="/" className="nav-link" >Bolos</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link" >Bolos de Pote</a>
-                                </li>
-                                <li className="nav-item active">
-                                    <a href="/" className="nav-link" >Cupcake</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link" >Doces</a>
-                                </li>
-                                <li className="nav-item active">
-                                    <a href="/" className="nav-link" >Salgados</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link" >Tortas</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/" className="nav-link" >Sua Festa</a>
-                                </li>
+                            {
+                                categorias.map(categoria => (
+                                    <li key={categoria.id}><Link onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
+
+                                ))
+                            }
+                                
                             </ul>
                         </div>
                     </nav>
@@ -53,8 +45,8 @@ const Header = ()=>{
                     <div className='div_carrinho'>
                         <nav>
                             <ul>
-                                <li><i class="fa fa-shopping-basket" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-user-plus" aria-hidden="true"></i></li>
+                                <li><i className="fa fa-shopping-basket" aria-hidden="true"></i></li>
+                                <li><i className="fa fa-user-plus" aria-hidden="true"></i></li>
                             </ul>
                         </nav>
                     </div>
@@ -63,4 +55,4 @@ const Header = ()=>{
     );
 }
 
-export default  Header;
+export default  connect(state => ({categorias: state.categorias.categorias}))(Header);

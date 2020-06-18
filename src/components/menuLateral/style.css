@@ -6,8 +6,9 @@
     margin-top: 0;
     margin-left: 8%;
     position: absolute;
-    top: 328px;
+    top: 305px;
     z-index: 3;
+    box-shadow: 6px 1px 20px 0px #8F5B36;
 }
 
 .div_carrousel_menu > nav{

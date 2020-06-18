@@ -1,25 +1,28 @@
 import React from "react"
 
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+
+import {connect} from "react-redux"
+
+import * as CategoriasActions from "../../store/actions/categorias"
 
 import './style.css'
 
-const Header = ()=>{
-    return(
+const MenuLateral = ({categorias, dispatch}) => {
+    return (
         <div className="div_carrousel_menu">
             <nav>
                 <ul>
-                    <li><Link to="/produtos">Bolos</Link></li>
-                    <li>Bolos de Pote</li>
-                    <li>Cupcake</li>
-                    <li>Doces</li>
-                    <li>Salgados</li>
-                    <li>Tortas</li>
-                    <li>Sua Festa</li>
+                    {
+                        categorias.map(categoria => (
+
+                            <li key={categoria.id}><Link onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
+                        ))
+                    }
                 </ul>
             </nav>
         </div>
     );
 }
 
-export default  Header;
+export default connect(state => ({categorias: state.categorias.categorias}))(MenuLateral);
