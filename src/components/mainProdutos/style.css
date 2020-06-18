@@ -24,5 +24,7 @@ main{
 {
     main{
         margin-left: 5%;
+        position: unset;
+        margin-top: 2%;
     }
 }

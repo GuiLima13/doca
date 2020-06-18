@@ -16,7 +16,7 @@ const MenuLateral = ({categorias, dispatch}) => {
                     {
                         categorias.map(categoria => (
 
-                            <li key={categoria.id}><Link onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
+                            <li key={categoria.id}><Link className="link" onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
                         ))
                     }
                 </ul>

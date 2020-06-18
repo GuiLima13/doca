@@ -6,6 +6,9 @@ header{
 li{
     list-style-type: none;
 }
+.link{
+    color: #FFE8C6;
+}
 .header_nav_topMenu, .nav-item>a{
     color: #FFE8C6 !important;
     font-weight: bold;

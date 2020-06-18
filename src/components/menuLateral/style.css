@@ -11,9 +11,9 @@
     box-shadow: 6px 1px 20px 0px #8F5B36;
 }
 
-.div_carrousel_menu > nav{
+.link{
+    color: #FFE8C6 !important;
 }
-
 .div_carrousel_menu > nav > ul{
     margin-top: 0;
     padding: 5%;
