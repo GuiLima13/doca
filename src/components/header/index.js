@@ -4,13 +4,15 @@ import {connect} from 'react-redux'
 
 import * as CategoriasActions from "../../store/actions/categorias"
 
+import ModalCarrinho from '../modalCarrinho'
+
 import './style.css'
 
 
 const Header = ({categorias,dispatch})=>{
     return(
             <header>
-            <Link to="/"><img alt="..." className="img_logo" src="/images/logo.png"></img></Link>
+                <Link to="/"><img alt="..." className="img_logo" src="/images/logo.png"></img></Link>
                 <div className="header_nav_topMenu">
 
                     <div  className="div_desktop">
@@ -45,12 +47,15 @@ const Header = ({categorias,dispatch})=>{
                     <div className='div_carrinho'>
                         <nav>
                             <ul>
-                                <li><i className="fa fa-shopping-basket" aria-hidden="true"></i></li>
+                                <li><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i></li>
+                                
+                                
                                 <li><i className="fa fa-user-plus" aria-hidden="true"></i></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
+                <ModalCarrinho/>
             </header>
     );
 }

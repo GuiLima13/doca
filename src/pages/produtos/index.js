@@ -19,12 +19,14 @@ const Produtos = () => {
                     <MenuLateral />
                 <MainProdutos>
 
-                <CardProdutos  />
-                <CardProdutos />
-                <CardProdutos />
+                <CardProdutos url={"../../images/bolo1.jpg"} />
+                <CardProdutos url={"../../images/bolodepote1.jpg"}/>
+                
+                <CardProdutos url={"../../images/cupecake1.jpg"}/>
 
                 </MainProdutos>
             </Provider>
+            
         </div>
 
     );

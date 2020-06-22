@@ -6,11 +6,12 @@ import './style.css'
 
 
 
-const CardProdutos = ({active})=>{
+const CardProdutos = ({active},props)=>{
 
     return (
-        <div className="container_produto">
-                <div className="img_produto"></div>
+        <view className="container_produto">
+                <img alt="..." src={props.url}  className="img_produto"></img>
+                    {console.log(props)}
                 <p className="descricao_produto">{active}</p>
                 <p className="nota_produto">estrelas</p>
                 <p className="preco_produto">R$50,00</p>
@@ -18,7 +19,7 @@ const CardProdutos = ({active})=>{
                     <input className="qtd_produto" type="number"></input>
                     <button className="add_produto">Compre agora</button>
                 </form>
-        </div>
+        </view>
     )
 }
 
