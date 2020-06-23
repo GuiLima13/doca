@@ -1,14 +1,23 @@
 import React from 'react';
 import './style.css';
 
-const CardSobre = (props)=>{
+import {connect} from "react-redux"
+
+import CardProdutos from "../../components/cardProdutos"
+
+const CardSobre = ({active})=>{
+    
+
     return(
         
         <main className="main_produtos">
-            {props.children}
+            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
         </main>
         
     )
 }
 
-export default CardSobre
+export default connect(state => ({active: state.categorias.active}))(CardSobre)

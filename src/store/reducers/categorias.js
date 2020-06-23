@@ -33,7 +33,6 @@ const INITIAL_STATE = {
 }
 
 export default function categorias(state = INITIAL_STATE, action) {
-    console.log("teste")
     if (action.type === "TOGGLE_CATEGORIA") {
         return { ...state, active: action.categoria.title };
     } 

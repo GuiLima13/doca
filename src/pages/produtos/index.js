@@ -5,7 +5,6 @@ import store from '../../store'
 
 import Header from "../../components/header"
 import MenuLateral from "../../components/menuLateral"
-import CardProdutos from "../../components/cardProdutos"
 import MainProdutos from "../../components/mainProdutos"
 
 const Produtos = () => {
@@ -19,10 +18,7 @@ const Produtos = () => {
                     <MenuLateral />
                 <MainProdutos>
 
-                <CardProdutos url={"../../images/bolo1.jpg"} />
-                <CardProdutos url={"../../images/bolodepote1.jpg"}/>
                 
-                <CardProdutos url={"../../images/cupecake1.jpg"}/>
 
                 </MainProdutos>
             </Provider>

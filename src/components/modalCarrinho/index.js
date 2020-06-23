@@ -1,10 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import './style.css'
 
-const ModalCarrinho = () => {
+const ModalCarrinho = (props) => {
+
+    
+
     return (
-        <div className="modal_carrinho_container px-0 modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal_carrinho_container px-0 modal " id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="my-0  modal-dialog">
                 <div className=" modal_carrinho modal-content">
                     <div className="header_carrinho modal-header">
@@ -16,7 +19,7 @@ const ModalCarrinho = () => {
                     <div className="total_itens_total_carrinho">
                         <div className="total_itens_carrinho_texto">
                             <p>Voce tem:</p>
-                            <p>4 itens Na sacola:</p>
+                            <p>{props.qtdItens} itens Na sacola:</p>
                         </div>
                         <div className="total_itens_carrinho_icon">
                             <i className="fa fa-shopping-bag"></i>

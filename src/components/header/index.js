@@ -1,4 +1,4 @@
-import React from "react"
+import React,{useEffect,useState} from "react"
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -10,6 +10,12 @@ import './style.css'
 
 
 const Header = ({categorias,dispatch})=>{
+    const [qtdCarrinho,setQtdCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")));
+
+    useEffect(()=>{
+        
+    },)
+
     return(
             <header>
                 <Link to="/"><img alt="..." className="img_logo" src="/images/logo.png"></img></Link>
@@ -47,7 +53,7 @@ const Header = ({categorias,dispatch})=>{
                     <div className='div_carrinho'>
                         <nav>
                             <ul>
-                                <li><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i></li>
+                    <li className="div_carrinho_certa"><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i><span>{qtdCarrinho.length}</span></li>
                                 
                                 
                                 <li><i className="fa fa-user-plus" aria-hidden="true"></i></li>
@@ -55,7 +61,7 @@ const Header = ({categorias,dispatch})=>{
                         </nav>
                     </div>
                 </div>
-                <ModalCarrinho/>
+                <ModalCarrinho qtdItens={qtdCarrinho.length}/>
             </header>
     );
 }

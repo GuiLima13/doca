@@ -10,11 +10,12 @@
 
 .qtd_produto{
     background-color: none;
-    width: 60px;
+    width: 45px;
     text-align: center;
-    
     background-color: #95d1af;
-    border: none;
+    border-radius: 7px;
+    border: solid 0.5px #8F5B36;
+    margin-right: 2px;
 }
 .add_produto{
     width: auto;

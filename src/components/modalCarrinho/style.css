@@ -68,3 +68,12 @@
         width: 100%;
     }
 }
+
+@media (max-width:1100px){
+    .modal_carrinho_container{
+        width: 35%;
+    }
+    .modal_carrinho{
+        width: 100%;
+    }
+}

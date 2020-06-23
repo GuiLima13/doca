@@ -37,6 +37,13 @@ li{
 .div_carrinho>nav>ul>li{
     font-size: 1.5em;
 }
+.div_carrinho_certa{
+    display: flex;
+}
+.div_carrinho_certa > span{
+    font-size: 0.5em;
+    text-align: initial;
+}
 .img_logo{
     width: 15em;
     margin: auto 0;
