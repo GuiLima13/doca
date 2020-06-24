@@ -18,8 +18,6 @@ const Produtos = () => {
                     <MenuLateral />
                 <MainProdutos>
 
-                
-
                 </MainProdutos>
             </Provider>
             

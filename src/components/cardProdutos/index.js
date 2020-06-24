@@ -1,4 +1,9 @@
-import React,{useState,useEffect} from "react"
+import React from "react"
+
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
+
+import * as carrinhoActions from '../../store/actions/carrinho'
 
 import './style.css'
 
@@ -7,19 +12,13 @@ import './style.css'
 
 const CardProdutos = (props)=>{
 
-    const [carrinho,setCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")) == null ? [] : 
-    JSON.parse(localStorage.getItem("carrinho")));;
-    //const [carrinho,setCarrinho] = useState([]);
     const handleAddToCart = (e)=>{
+
         e.preventDefault()
         const produto = e.target.parentNode.parentNode.children
-        setCarrinho([...carrinho,{produto:produto[1].innerText,preco:produto[3].innerText}])
+        props.addToCart({produto:produto[1].innerText,preco:produto[3].innerText})
     }
-
-    useEffect(()=>{
-        localStorage.setItem("carrinho",JSON.stringify(carrinho))
-    },[carrinho])
-
+    
     return (
         <div className="container_produto">
                 <img alt="..." src={props.url}  className="img_produto"></img>
@@ -34,4 +33,8 @@ const CardProdutos = (props)=>{
     )
 }
 
-export default CardProdutos
+
+const mapDispatchToProps = dispatch => 
+    bindActionCreators(carrinhoActions,dispatch)
+
+export default connect(null, mapDispatchToProps)(CardProdutos)

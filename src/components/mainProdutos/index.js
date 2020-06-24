@@ -5,16 +5,16 @@ import {connect} from "react-redux"
 
 import CardProdutos from "../../components/cardProdutos"
 
-const CardSobre = ({active})=>{
+const CardSobre = (props)=>{
     
 
     return(
         
         <main className="main_produtos">
-            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
-            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
-            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
-            <CardProdutos cat={active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={props.active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={props.active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={props.active} url={"../../images/cupecake1.jpg"} />
+            <CardProdutos cat={props.active} url={"../../images/cupecake1.jpg"} />
         </main>
         
     )

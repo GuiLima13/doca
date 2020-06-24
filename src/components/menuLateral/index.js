@@ -8,15 +8,15 @@ import * as CategoriasActions from "../../store/actions/categorias"
 
 import './style.css'
 
-const MenuLateral = ({categorias, dispatch}) => {
+const MenuLateral = (props) => {
     return (
         <div className="div_carrousel_menu">
             <nav>
                 <ul>
                     {
-                        categorias.map(categoria => (
+                        props.categorias.map(categoria => (
 
-                            <li key={categoria.id}><Link className="link" onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
+                            <li key={categoria.id}><Link className="link" onClick={()=> props.dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
                         ))
                     }
                 </ul>

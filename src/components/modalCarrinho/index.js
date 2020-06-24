@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
 import './style.css'
 
 const ModalCarrinho = (props) => {
@@ -26,10 +26,17 @@ const ModalCarrinho = (props) => {
                         </div>
                     </div>
                     <div className="total_carrinho modal-body">
-                        <div>
-                            <span>Qtd: 10kg</span>
-                            <span>  Produto: Bolo</span>
-                        </div>
+                        {
+                            props.carrinho.map((produto,index)=>{
+                                return (
+                                <div>
+                                    <span>Produto: {produto.produto}</span>
+                                    <span>  Preço: {produto.preco}</span>
+                                    </div>
+                                )
+                            })
+                        }
+                        
                     </div>
                     <div className="botao_carrinho_container modal-footer">
                         <button type="button" className="botao_carrinho btn " data-dismiss="modal">Comprar mais produtos</button>
@@ -42,4 +49,4 @@ const ModalCarrinho = (props) => {
 }
 
 
-export default ModalCarrinho
+export default connect(state => ({carrinho: state.carrinho}))(ModalCarrinho)

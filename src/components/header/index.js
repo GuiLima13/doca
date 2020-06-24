@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react"
+import React from "react"
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -9,13 +9,7 @@ import ModalCarrinho from '../modalCarrinho'
 import './style.css'
 
 
-const Header = ({categorias,dispatch})=>{
-    const [qtdCarrinho,setQtdCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")) == null ? [] : 
-    JSON.parse(localStorage.getItem("carrinho")));
-
-    useEffect(()=>{
-        
-    },)
+const Header = (props)=>{
 
     return(
             <header>
@@ -40,9 +34,8 @@ const Header = ({categorias,dispatch})=>{
                         <div className="collapse navbar-collapse" id="conteudoNavbarSuportado">
                             <ul className="navbar-nav mr-auto">
                             {
-                                categorias.map(categoria => (
-                                    <li key={categoria.id}><Link className="link" onClick={()=> dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
-
+                                props.categorias.map(categoria => (
+                                    <li key={categoria.id}><Link className="link" onClick={()=> props.dispatch(CategoriasActions.toggleCategoria(categoria))} to="/produtos">{categoria.title}</Link></li>
                                 ))
                             }
                                 
@@ -54,7 +47,7 @@ const Header = ({categorias,dispatch})=>{
                     <div className='div_carrinho'>
                         <nav>
                             <ul>
-                    <li className="div_carrinho_certa"><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i><span>{qtdCarrinho.length}</span></li>
+                    <li className="div_carrinho_certa"><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i><span>{props.carrinho.length}</span></li>
                                 
                                 
                                 <li><i className="fa fa-user-plus" aria-hidden="true"></i></li>
@@ -62,9 +55,12 @@ const Header = ({categorias,dispatch})=>{
                         </nav>
                     </div>
                 </div>
-                <ModalCarrinho qtdItens={qtdCarrinho.length}/>
+                <ModalCarrinho qtdItens={props.carrinho.length}/>
             </header>
     );
 }
 
-export default  connect(state => ({categorias: state.categorias.categorias}))(Header);
+export default  connect(state => ({
+    categorias: state.categorias.categorias,
+    carrinho: state.carrinho
+    }))(Header);

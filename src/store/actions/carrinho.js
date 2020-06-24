@@ -1,6 +1,6 @@
-export function toggleCarrinho(carrinho){
+export function addToCart(carrinho){
     return{
-        type:'TOGGLE_CARRINHO',
+        type:'ADD_TO_CART',
         carrinho
     }
 }
