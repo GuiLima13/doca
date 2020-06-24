@@ -10,7 +10,8 @@ import './style.css'
 
 
 const Header = ({categorias,dispatch})=>{
-    const [qtdCarrinho,setQtdCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")));
+    const [qtdCarrinho,setQtdCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")) == null ? [] : 
+    JSON.parse(localStorage.getItem("carrinho")));
 
     useEffect(()=>{
         

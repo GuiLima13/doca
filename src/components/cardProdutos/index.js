@@ -7,9 +7,10 @@ import './style.css'
 
 const CardProdutos = (props)=>{
 
-    const [carrinho,setCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")));
+    const [carrinho,setCarrinho] = useState(JSON.parse(localStorage.getItem("carrinho")) == null ? [] : 
+    JSON.parse(localStorage.getItem("carrinho")));;
     //const [carrinho,setCarrinho] = useState([]);
-    const handleCarrinho = (e)=>{
+    const handleAddToCart = (e)=>{
         e.preventDefault()
         const produto = e.target.parentNode.parentNode.children
         setCarrinho([...carrinho,{produto:produto[1].innerText,preco:produto[3].innerText}])
@@ -27,7 +28,7 @@ const CardProdutos = (props)=>{
                 <p className="preco_produto">R$50,00</p>
                 <form className="form_produto"> 
                     <input placeholder="0" className="qtd_produto" type="number"></input>
-                    <button className="add_produto" onClick={ handleCarrinho }>Compre agora</button>
+                    <button className="add_produto" onClick={ handleAddToCart }>Compre agora</button>
                 </form>
         </div>
     )

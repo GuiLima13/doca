@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 import './style.css'
 
@@ -19,7 +19,7 @@ const ModalCarrinho = (props) => {
                     <div className="total_itens_total_carrinho">
                         <div className="total_itens_carrinho_texto">
                             <p>Voce tem:</p>
-                            <p>{props.qtdItens} itens Na sacola:</p>
+                            <p>{props.qtdItens} itens na cesta:</p>
                         </div>
                         <div className="total_itens_carrinho_icon">
                             <i className="fa fa-shopping-bag"></i>
