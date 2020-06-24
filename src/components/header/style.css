@@ -35,13 +35,13 @@ li{
 }
 
 .div_carrinho>nav>ul>li{
-    font-size: 0.5em;
+    font-size: 1em;
 }
-.div_carrinho_certa{
+.div_carrinho_cesta{
     display: flex;
 }
-.div_carrinho_certa > span{
-    font-size: 0.5em;
+.div_carrinho_cesta > span{
+    font-size: 0.7em;
     text-align: initial;
 }
 .img_logo{
@@ -101,7 +101,13 @@ li{
 
 @media (min-width: 992px) 
 {
-    
+    .div_carrinho>nav>ul>li{
+        font-size: 0.5em;
+    }
+    .div_carrinho_cesta > span{
+        font-size: 0.5em;
+        text-align: initial;
+    }
     .navbar{
         display: none;
     }

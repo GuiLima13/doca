@@ -9,7 +9,6 @@ JSON.parse(localStorage.getItem("carrinho"))
 export default function carrinho(state = INITIAL_STATE, action) {
     if (action.type === "ADD_TO_CART") {
         
-        console.log(action.carrinho)
         localStorage.setItem("carrinho",JSON.stringify([...state,action.carrinho]))
         return [ ...state,action.carrinho];
     } 

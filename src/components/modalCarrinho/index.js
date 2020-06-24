@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {connect} from 'react-redux'
 import './style.css'
 
 const ModalCarrinho = (props) => {
 
-    
+    const [qtde, setQtde] = useState(0)
 
     return (
         <div className="modal_carrinho_container px-0 modal " id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -25,18 +25,25 @@ const ModalCarrinho = (props) => {
                             <i className="fa fa-shopping-bag"></i>
                         </div>
                     </div>
-                    <div className="total_carrinho modal-body">
+                    <div className="total_carrinho modal-body" >
                         {
                             props.carrinho.map((produto,index)=>{
                                 return (
-                                <div>
-                                    <span>Produto: {produto.produto}</span>
-                                    <span>  Preço: {produto.preco}</span>
+                                    <div key={index}>
+                                    <i className="fa fa-times"></i>
+                                    <span><strong>{produto.produto}</strong> </span>
+                                    <input value={produto.quantidade}
+                                     onChange={(e)=>setQtde(e.target.value)} 
+                                     type="number"></input>
+                                    <span> {produto.preco}</span>
                                     </div>
                                 )
                             })
                         }
                         
+                    </div>
+                    <div className="modal_carrinho_valor_total">
+                        <span>Total: 1000</span>
                     </div>
                     <div className="botao_carrinho_container modal-footer">
                         <button type="button" className="botao_carrinho btn " data-dismiss="modal">Comprar mais produtos</button>

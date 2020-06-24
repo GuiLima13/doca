@@ -47,7 +47,7 @@ const Header = (props)=>{
                     <div className='div_carrinho'>
                         <nav>
                             <ul>
-                    <li className="div_carrinho_certa"><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i><span>{props.carrinho.length}</span></li>
+                    <li className="div_carrinho_cesta"><i data-toggle="modal" data-target="#exampleModal" className="fa fa-shopping-basket" aria-hidden="true"></i><span>{props.carrinho.length}</span></li>
                                 
                                 
                                 <li><i className="fa fa-user-plus" aria-hidden="true"></i></li>
