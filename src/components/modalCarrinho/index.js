@@ -2,9 +2,19 @@ import React,{useState} from 'react'
 import {connect} from 'react-redux'
 import './style.css'
 
+
+import {bindActionCreators} from 'redux'
+import * as carrinhoActions from '../../store/actions/carrinho'
+
 const ModalCarrinho = (props) => {
 
     const [qtde, setQtde] = useState(0)
+
+    const handleRemoveToCart = (e)=>{
+        props.removeToCart(e.target.parentNode.classList[0])
+        
+        //console.log(e.target.parentNode.remove())
+    }
 
     return (
         <div className="modal_carrinho_container px-0 modal " id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -29,12 +39,12 @@ const ModalCarrinho = (props) => {
                         {
                             props.carrinho.map((produto,index)=>{
                                 return (
-                                    <div key={index}>
-                                    <i className="fa fa-times"></i>
-                                    <span><strong>{produto.produto}</strong> </span>
-                                    <input value={produto.quantidade}
-                                     onChange={(e)=>setQtde(e.target.value)} 
-                                     type="number"></input>
+                                    <div className={index} key={index}>
+                                    <i onClick={handleRemoveToCart}
+                                     className="fa fa-times"></i>
+                                    <span ><strong>{produto.produto}</strong> </span>
+                                    <span className="lowerCase">{produto.quantidade}  un    x</span>
+                                    
                                     <span> {produto.preco}</span>
                                     </div>
                                 )
@@ -55,5 +65,7 @@ const ModalCarrinho = (props) => {
     )
 }
 
+const mapDispatchToProps = dispatch => 
+    bindActionCreators(carrinhoActions,dispatch)
 
-export default connect(state => ({carrinho: state.carrinho}))(ModalCarrinho)
+export default connect(state => ({carrinho: state.carrinho}),mapDispatchToProps)(ModalCarrinho)

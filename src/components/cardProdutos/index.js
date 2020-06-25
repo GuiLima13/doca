@@ -1,8 +1,9 @@
 import React,{useState} from "react"
 
-import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
+
+import {bindActionCreators} from 'redux'
 import * as carrinhoActions from '../../store/actions/carrinho'
 
 import './style.css'

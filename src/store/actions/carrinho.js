@@ -4,3 +4,10 @@ export function addToCart(carrinho){
         carrinho
     }
 }
+
+export function removeToCart(carrinho){
+    return{
+        type:'REMOVE_TO_CART',
+        carrinho
+    }
+}
