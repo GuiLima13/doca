@@ -5,4 +5,6 @@
 
 body{
     background-color: #95D1AF;
+    max-width: 1400px;
+    margin: 0 auto;
 }

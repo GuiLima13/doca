@@ -1,0 +1,51 @@
+
+.container_main_carrinho{
+    width: 100%;
+    margin: 0 auto;
+    height: 40vh;
+}
+
+.link_carrinho{
+    color: black ;
+}
+
+.table_carrinho{
+    width: 100%;
+    margin: 0 1%;
+    overflow-y: scroll;
+}
+.table_carrinho > thead{
+    width: 100%;
+}
+.th_produto{
+    width: 33%;
+}
+.th_preco{
+    width: 20%;
+}
+.th_qtd{
+    width: 18%;
+}
+.th_total{
+    width: 20%;
+}
+.th_exclui{
+    width: 9%;
+}
+
+.td_excluir{
+    text-align: center;
+}
+
+@media (min-width:550px){
+    .table_carrinho{
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+@media (min-width:900px){
+    .table_carrinho{
+        width: 50%;
+        margin: 0 auto;
+    }
+}

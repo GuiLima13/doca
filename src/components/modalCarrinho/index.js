@@ -1,5 +1,6 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import './style.css'
 
 
@@ -8,7 +9,6 @@ import * as carrinhoActions from '../../store/actions/carrinho'
 
 const ModalCarrinho = (props) => {
 
-    const [qtde, setQtde] = useState(0)
 
     const handleRemoveToCart = (e)=>{
         props.removeToCart(e.target.parentNode.classList[0])
@@ -57,7 +57,7 @@ const ModalCarrinho = (props) => {
                     </div>
                     <div className="botao_carrinho_container modal-footer">
                         <button type="button" className="botao_carrinho btn " data-dismiss="modal">Comprar mais produtos</button>
-                        <button type="button" className="botao_carrinho btn ">Finalizar meu pedido</button>
+                        <button    type="button"  className="botao_carrinho btn "><a className="link_carrinho " href="/carrinho" >Finalizar meu pedido</a></button>
                     </div>
                 </div>
             </div>
