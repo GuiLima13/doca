@@ -7,6 +7,7 @@ import Home from "./pages/home";
 import Produtos from "./pages/produtos";
 
 import Carrinho from "./pages/carrinho";
+import ProdutoDetalhe from "./pages/produtoDetalhe";
 
  const Routes = ()=>{
   return (
@@ -15,6 +16,7 @@ import Carrinho from "./pages/carrinho";
         <Route path="/" exact component={Home} />
         <Route path="/produtos" component={Produtos} />
         <Route path="/carrinho" component={Carrinho} />
+        <Route path="/detalhes" component={ProdutoDetalhe} />
       </Switch>
     </BrowserRouter>
   );

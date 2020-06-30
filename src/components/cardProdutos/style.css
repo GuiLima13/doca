@@ -32,6 +32,9 @@
     object-fit: cover;
     border-radius: 9px;
 }
+.img_produto:hover{
+    opacity: 0.5;
+}
 
 @media (min-width: 500px){
     .container_produto{

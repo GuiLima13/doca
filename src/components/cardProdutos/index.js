@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 
 import {bindActionCreators} from 'redux'
@@ -29,12 +30,12 @@ const CardProdutos = (props)=>{
     
     return (
         <div className="container_produto">
-                <img alt="..." src={props.url}  className="img_produto"></img>
+                <Link to="/detalhes"><img alt="..." src={props.url}   className="img_produto"></img></Link>
                 <p className="descricao_produto">{props.cat}</p>
                 <p className="nota_produto">estrelas</p>
                 <p className="preco_produto">R$50,00</p>
                 <form className="form_produto"> 
-                    <input placeholder="0" className="qtd_produto" onChange={(e)=>setQtde(e.target.value)} type="number"></input>
+                    <input placeholder="1" min="1" className="qtd_produto" onChange={(e)=>setQtde(e.target.value)} type="number"></input>
                     <button className="add_produto" onClick={ handleAddToCart }>Compre agora</button>
                 </form>
         </div>
