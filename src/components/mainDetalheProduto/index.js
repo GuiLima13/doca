@@ -3,6 +3,10 @@ import React from 'react';
 import './style.css'
 
 const MainDetalheProduto = () => {
+    const handleTrocaImage = (e)=>{
+        document.getElementById('img_detalhe_produto').src = e.target.src
+    }
+
     return (
         <div class="card-body">
 
@@ -13,20 +17,20 @@ const MainDetalheProduto = () => {
                 <div class="col-lg-5">
 
                     <a class="text-center d-block mb-4" >
-                        <img src="./images/brigadeiro.jpg" class="img-fluid" alt="Product-img" ></img>
+                        <img  id="img_detalhe_produto" src="./images/brigadeiro.jpg" class="img-fluid" alt="Product-img" ></img>
                     </a>
                     <div class="d-lg-flex d-none justify-content-center">
                         <a >
-                            <img src="./images/brigadeiro.jpg" class="img-fluid img-thumbnail p-2" alt="Product-img"></img>
+                            <img src="./images/bolo1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img"></img>
                         </a>
                         <a class="ml-2" >
-                            <img src="./images/brigadeiro.jpg" class="img-fluid img-thumbnail p-2" alt="Product-img" ></img>
+                            <img src="./images/bolodepote1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
                         </a>
                         <a class="ml-2" >
-                            <img src="./images/bolo1.jpg" class="img-fluid img-thumbnail p-2" alt="Product-img" ></img>
+                            <img src="./images/cupecake1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
                         </a>
                         <a class="ml-2" >
-                            <img src="./images/brigadeiro.jpg" class="img-fluid img-thumbnail p-2" alt="Product-img" ></img>
+                            <img src="./images/brigadeiro.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
                         </a>
                     </div>
 
