@@ -5,6 +5,7 @@ import store from '../../store'
 
 import HeaderCarrinho from '../../components/headerCarrinho'
 import MainCarrinho from '../../components/mainCarrinho'
+import FooterCarrinho from '../../components/footerCarrinho'
 
 const Carrinho = () => {
     return (
@@ -13,7 +14,7 @@ const Carrinho = () => {
 
                 <HeaderCarrinho />
                 <MainCarrinho />
-
+                <FooterCarrinho/>
             </div>
         </Provider>
     );

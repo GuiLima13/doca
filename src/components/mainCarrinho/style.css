@@ -1,8 +1,10 @@
 
 .container_main_carrinho{
     width: 100%;
-    margin: 0 auto;
-    height: 40vh;
+    margin: 1% auto;
+    height: 35vh;
+    
+    overflow-y: scroll;
 }
 
 .link_carrinho{
@@ -12,16 +14,32 @@
 .table_carrinho{
     width: 100%;
     margin: 0 1%;
-    overflow-y: scroll;
 }
 .table_carrinho > thead{
     width: 100%;
+    background-color: #8F5B36;
+    color: #FFE8C6;
+    text-align: center;
+    background-color: none;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-align: center;
 }
 .th_produto{
     width: 33%;
 }
 .th_preco{
     width: 20%;
+    
+}
+.table_carrinho > tr > td{
+    background-color: #FBAB83;
+    color: #FFE8C6;
+    text-align: center;
+    background-color: none;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-align: center;
 }
 .th_qtd{
     width: 18%;
