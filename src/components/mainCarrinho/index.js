@@ -7,7 +7,9 @@ import { bindActionCreators } from 'redux'
 import * as carrinhoActions from '../../store/actions/carrinho'
 
 const MainCarrinho = (props) => {
-
+    const handleRemoveToCart = (e)=>{
+        props.removeToCart(e.target.parentNode.parentNode.classList[0]);
+    }
     return (
         <main className="container_main_carrinho">
             <table className="table_carrinho">
@@ -22,12 +24,13 @@ const MainCarrinho = (props) => {
                     props.carrinho.map((produto, index) => {
                         return (
 
-                                    <tr>
+                                    <tr className={index} key={index}>
                                         <td>{produto.produto}</td>
                                         <td>{produto.preco}</td>
                                         <td>{produto.quantidade} un</td>
                                         <td>R$100</td>
-                                        <td className="td_excluir"><i className="fa fa-times"></i></td>
+                                        <td className="td_excluir"><i onClick={handleRemoveToCart}
+                                                                     className="fa fa-times"></i></td>
                                     </tr>
                                 )
                     })
