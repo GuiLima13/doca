@@ -13,7 +13,7 @@ import './style.css'
 
 
 const CardProdutos = (props)=>{
-    const [qtde, setQtde] = useState(0)
+    const [qtde, setQtde] = useState(1)
     const handleAddToCart = (e)=>{
         e.preventDefault()
         const produto = e.target.parentNode.parentNode.children
