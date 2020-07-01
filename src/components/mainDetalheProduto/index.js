@@ -6,6 +6,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 
+import api from '../../services/api'
+
 import {bindActionCreators} from 'redux'
 import * as carrinhoActions from '../../store/actions/carrinho'
 
@@ -14,7 +16,28 @@ const MainDetalheProduto = (props) => {
     const [qtde, setQtde] = useState(1)
 
     const handleAddToCart = (e)=>{
-        console.log(qtde)
+        e.preventDefault();
+        const data = {
+            nome:'Guilherme',
+            email:'Gui@mail.com',
+            senha:'123456',
+            telefone:'55556666',
+            cpf:'8789878'
+        };
+        //Criando um try/catch para monitorar se o cadastro deu ou nao deu certo
+        try {
+
+            //Passando para a api dos valores e o caminho da rota que ela ira chamar,
+            // e jogando o resultado em uma variavel para saber se deu ou nao certo 
+            const res = await api.post('/usuario',data);
+
+            //pegando o id que ele retona e mostrando ao usuario
+            alert(`${res}`);
+
+        } catch (error) {
+            alert('Erro ao cadastrar ONG');
+        }
+        //console.log(qtde)
         //console.log(e.target.parentNode.children[0].value)
     }
 
