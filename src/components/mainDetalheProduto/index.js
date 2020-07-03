@@ -35,7 +35,7 @@ const MainDetalheProduto = (props) => {
             alert(`${res}`);
 
         } catch (error) {
-            alert('Erro ao cadastrar ONG');
+            alert('Erro ao cadastrar Usuario');
         }
         //console.log(qtde)
         //console.log(e.target.parentNode.children[0].value)
