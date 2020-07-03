@@ -29,10 +29,12 @@ const MainDetalheProduto = (props) => {
 
             //Passando para a api dos valores e o caminho da rota que ela ira chamar,
             // e jogando o resultado em uma variavel para saber se deu ou nao certo 
-            const res = await api.post('/usuario',data);
-
+            //const res = await api.post('/usuario',data);
+                const res = await api.post('/usuario')
+                
             //pegando o id que ele retona e mostrando ao usuario
-            alert(`${res}`);
+            console.log(`${res}`);
+            alert('Cadastrado com sucesso')
 
         } catch (error) {
             alert('Erro ao cadastrar Usuario');
