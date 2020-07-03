@@ -15,7 +15,7 @@ const MainDetalheProduto = (props) => {
 
     const [qtde, setQtde] = useState(1)
 
-    const handleAddToCart = (e)=>{
+    const handleAddToCart = async (e)=>{
         e.preventDefault();
         const data = {
             nome:'Guilherme',
