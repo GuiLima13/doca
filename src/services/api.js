@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL:'http://apidocadoce.herokuapp.com'
+    baseURL:'https://apidocadoce.herokuapp.com'
 });
 
 export default api;
