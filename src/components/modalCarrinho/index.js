@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {connect} from 'react-redux'
 import './style.css'
 
@@ -7,8 +7,17 @@ import {bindActionCreators} from 'redux'
 import * as carrinhoActions from '../../store/actions/carrinho'
 
 const ModalCarrinho = (props) => {
-
-
+    const [total,setTotal] = useState(0)
+    
+    useEffect(()=>{
+        var soma = 0;
+        props.carrinho.map(produto=>{
+            soma += Number(produto.preco)*Number(produto.quantidade);
+       })
+       
+       setTotal(soma.toFixed(2))
+    },[props.carrinho])
+ 
     const handleRemoveToCart = (e)=>{
         props.removeToCart(e.target.parentNode.classList[0])
         
@@ -16,7 +25,7 @@ const ModalCarrinho = (props) => {
     }
 
     return (
-        <div className="modal_carrinho_container px-0 modal " id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div  className="modal_carrinho_container px-0 modal " id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="my-0  modal-dialog">
                 <div className=" modal_carrinho modal-content">
                     <div className="header_carrinho modal-header">
@@ -41,8 +50,8 @@ const ModalCarrinho = (props) => {
                                     <div className={index} key={index}>
                                     <i onClick={handleRemoveToCart}
                                      className="fa fa-times"></i>
-                                    <span ><strong>{produto.produto}</strong> </span>
-                                    <span className="lowerCase">{produto.quantidade}  un    x</span>
+                                    <span ><strong>{produto.desc}</strong> </span>
+                                    <span className="lowerCase">{produto.quantidade}/{produto.tipoUnidade}    x</span>
                                     
                                     <span> {produto.preco}</span>
                                     </div>
@@ -52,7 +61,7 @@ const ModalCarrinho = (props) => {
                         
                     </div>
                     <div className="modal_carrinho_valor_total">
-                        <span>Total: 1000</span>
+                    <span>Total: {total}</span>
                     </div>
                     <div className="botao_carrinho_container modal-footer">
                         <button type="button" className="botao_carrinho btn " data-dismiss="modal">Comprar mais produtos</button>

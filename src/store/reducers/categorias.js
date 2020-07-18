@@ -34,7 +34,7 @@ const INITIAL_STATE = {
 
 export default function categorias(state = INITIAL_STATE, action) {
     if (action.type === "TOGGLE_CATEGORIA") {
-        return { ...state, active: action.categoria.title };
+        return { ...state, active: action.categoria.id };
     } 
         return state;
     

@@ -25,10 +25,10 @@ const MainCarrinho = (props) => {
                         return (
 
                                     <tr className={index} key={index}>
-                                        <td>{produto.produto}</td>
+                                        <td>{produto.desc}</td>
                                         <td>{produto.preco}</td>
-                                        <td>{produto.quantidade} un</td>
-                                        <td>R$100</td>
+                                        <td>{produto.quantidade} {produto.tipoUnidade}</td>
+                                        <td>R${(Number(produto.preco)*Number(produto.quantidade)).toFixed(2)}</td>
                                         <td className="td_excluir"><i onClick={handleRemoveToCart}
                                                                      className="fa fa-times"></i></td>
                                     </tr>

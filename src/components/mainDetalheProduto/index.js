@@ -1,135 +1,124 @@
-import React,{useState} from 'react';
+import React, {useEffect, useState } from 'react';
 
 import './style.css'
-
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 
 
 import api from '../../services/api'
 
-import {bindActionCreators} from 'redux'
-import * as carrinhoActions from '../../store/actions/carrinho'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+
+
+import * as ProdutoActions from '../../store/actions/produto'
 
 const MainDetalheProduto = (props) => {
 
     const [qtde, setQtde] = useState(1)
+   // const [produto, setProduto] = useState()
+    
+                //api.get('/produto'+props.produto.index).then(res=>{
+                    
+                   // props.dispatch(ProdutoActions.addToProductSelected(res.data[0]))
 
-    const handleAddToCart = async (e)=>{
-        e.preventDefault();
-        const data = {
-            nome:'Guilherme',
-            email:'Gui@mail.com',
-            senha:'123456',
-            telefone:'55556666',
-            cpf:'8789878'
-        };
-        //Criando um try/catch para monitorar se o cadastro deu ou nao deu certo
-        try {
-
-            //Passando para a api dos valores e o caminho da rota que ela ira chamar,
-            // e jogando o resultado em uma variavel para saber se deu ou nao certo 
-            const res = await api.post('/usuario',data);
+                    //console.log()
+                    //console.log(props.produto.index)
+              //  })
+    
                 
-            //pegando o id que ele retona e mostrando ao usuario
-            console.log(`${res}`);
-            alert('Cadastrado com sucesso')
+        
 
-        } catch (error) {
-            alert('Erro ao cadastrar Usuario');
-        }
+
+
+    const handleAddToCart = async (e) => {
+        e.preventDefault();
+        alert('teste')
         //console.log(qtde)
         //console.log(e.target.parentNode.children[0].value)
     }
 
-    const handleTrocaImage = (e)=>{
+    const handleTrocaImage = (e) => {
         document.getElementById('img_detalhe_produto').src = e.target.src
     }
 
     return (
-        <div class="card-body">
+        <div className="card-body">
 
 
 
-            <div class="main_produtos row">
+            <div className="main_produtos row">
 
-                <div class="col-lg-5">
+                <div className="col-lg-5">
 
-                    <Link class="text-center d-block mb-4" >
-                        <img  id="img_detalhe_produto" src="./images/brigadeiro.jpg" class="img-fluid" alt="Product-img" ></img>
+                    <Link className="text-center d-block mb-4" >
+                        <img id="img_detalhe_produto" src={"./images/"+props.produto.produto.foto1+".jpg"} className="img-fluid" alt="Product-img" ></img>
                     </Link>
-                    <div class="d-lg-flex d-none justify-content-center">
+                    <div className="d-lg-flex d-none justify-content-center">
                         <Link >
-                            <img src="./images/bolo1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img"></img>
+                            <img src={"./images/"+props.produto.produto.foto1+".jpg"} onClick={handleTrocaImage} className="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img"></img>
                         </Link>
-                        <Link class="ml-2" >
-                            <img src="./images/bolodepote1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
+                        <Link className="ml-2" >
+                            <img src={"./images/"+props.produto.produto.foto2+".jpg"} onClick={handleTrocaImage} className="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
                         </Link>
-                        <Link class="ml-2" >
-                            <img src="./images/cupecake1.jpg" onClick={handleTrocaImage} class="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
-                        </Link>
-                        <Link class="ml-2" >
-                            <img src="./images/brigadeiro.jpg" onClick={handleTrocaImage} className="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
+                        <Link className="ml-2" >
+                            <img src={"./images/"+props.produto.produto.foto3+".jpg"} onClick={handleTrocaImage} className="img_mini_produto img-fluid img-thumbnail p-2" alt="Product-img" ></img>
                         </Link>
                     </div>
 
                 </div>
 
-                <div class="col-lg-7">
-                    <form class="pl-lg-4">
-                        <h3 class="mt-0">Brigadeiro<Link class="text-muted" href="/"><i class="mdi mdi-square-edit-outline ml-2"></i></Link></h3>
-                        <p class="mb-1">Adicionado: 09/12/2018</p>
-                        <p class="font-16" value="4.5" tag="p" id="rating-container">
-                            <span class="text-warning mdi mdi-star">
+                <div className="col-lg-7">
+                    <form className="pl-lg-4">
+                        <h3 className="mt-0">{props.produto.produto.nomeProduto}<Link className="text-muted" href="/"><i className="mdi mdi-square-edit-outline ml-2"></i></Link></h3>
+                        <p className="mb-1">Adicionado: 09/12/2018</p>
+                        <p className="font-16" value="4.5" tag="p" id="rating-container">
+                            <span className="text-warning mdi mdi-star">
                             </span>
-                            <span class="text-warning mdi mdi-star"></span>
-                            <span class="text-warning mdi mdi-star"></span>
-                            <span class="text-warning mdi mdi-star"></span>
-                            <span class="text-warning mdi mdi-star-outline"></span>
+                            <span className="text-warning mdi mdi-star"></span>
+                            <span className="text-warning mdi mdi-star"></span>
+                            <span className="text-warning mdi mdi-star"></span>
+                            <span className="text-warning mdi mdi-star-outline"></span>
                         </p>
 
-                        <div class="mt-3">
-                            <h4><span class="badge badge-success-lighten">Disponivel</span></h4>
+                        <div className="mt-3">
+                            <h4><span className="badge badge-success-lighten">Disponivel</span></h4>
                         </div>
 
-                        <div class="mt-4">
-                            <h6 class="font-14">Valor</h6>
-                            <h3> R$ 1,50 Un</h3>
+                        <div className="mt-4">
+                            <h6 className="font-14">Valor</h6>
+                            <h3>{Number(props.produto.produto.valorVenda).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })+" / "+props.produto.produto.tipoUnidade}</h3>
                         </div>
 
-                        <div class="mt-4">
-                            <h6 class="font-14">Quantidade:</h6>
-                            <div class="d-flex ">
-                                <input 
-                                    type="number" 
-                                    min="1" 
-                                    onChange={(e)=>(setQtde(e.target.value))}
-                                    class="form-control input_qtde_detalhe_produto" 
+                        <div className="mt-4">
+                            <h6 className="font-14">Quantidade:</h6>
+                            <div className="d-flex ">
+                                <input
+                                    type="number"
+                                    min="1"
+                                    onChange={(e) => (setQtde(e.target.value))}
+                                    className="form-control input_qtde_detalhe_produto"
                                     placeholder="1"></input>
-                                <button 
+                                <button
                                     type="button"
-                                    onClick={handleAddToCart} 
-                                    class="add_produto ml-2">Compre agora</button>
+                                    onClick={handleAddToCart}
+                                    className="add_produto ml-2">Compre agora</button>
                             </div>
 
                         </div>
 
 
-                        <div class="mt-4">
-                            <h6 class="font-14">Descrição:</h6>
-                            <p>Brigadeiro feito com muito amor e carinho</p>
+                        <div className="mt-4">
+                            <h6 className="font-14">Descrição:</h6>
+                            <p>{props.produto.produto.descricao}</p>
                         </div>
 
-                        
+
                     </form>
                 </div>
             </div>
-            <div class="table-responsive mt-4">
+            <div className="table-responsive mt-4">
             </div>
         </div>
     )
 }
-const mapDispatchToProps = dispatch => 
-    bindActionCreators(carrinhoActions,dispatch)
 
-export default connect(state => ({carrinho: state.carrinho}), mapDispatchToProps)(MainDetalheProduto)
+export default connect(state => ({ produto: state.produto }))(MainDetalheProduto)

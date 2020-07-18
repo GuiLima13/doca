@@ -14,15 +14,10 @@ export default function carrinho(state = INITIAL_STATE, action) {
     } else
     if (action.type === "REMOVE_TO_CART") {
         
-        //state.splice(action.carrinho,1)
-        
-        //console.log(state)//[ ...state,action.carrinho];)
         console.log("Estado Removido")
         console.log(state.splice(action.carrinho,1))
         
         localStorage.setItem("carrinho",JSON.stringify(state))
-        console.log("Estado atual")
-        console.log(state)
         return [...state]
     } else{
         return state;

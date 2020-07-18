@@ -35,6 +35,10 @@
 .img_produto:hover{
     opacity: 0.5;
 }
+.precoProduto{
+    display: flex;
+    color: #8F5B36;
+}
 
 @media (min-width: 500px){
     .container_produto{
